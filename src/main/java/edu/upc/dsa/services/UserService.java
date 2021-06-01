@@ -37,7 +37,7 @@ public class UserService {
     })
     @Path("/get/{username}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getTrack(@PathParam("username") int ID) {
+    public Response getUser(@PathParam("username") int ID) {
         User t = this.gameInterface.getUser(ID);
         if (t == null) return Response.status(404).build();
         else  return Response.status(201).entity(new Gson().toJson(t)).build();
